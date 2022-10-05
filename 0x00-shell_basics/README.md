@@ -7,3 +7,4 @@
 6 mkdir /tmp/my_first_directory     to create the directory in /tmp
 7 /tmp/betty /tmp/my_first_directory  to move betty to my_first_directory
 8 rm /tmp/my_first_directory/betty  to delete betty
+9 rmdir /tmp/my_first_directory  to delete directory
