@@ -8,4 +8,4 @@
 7 /tmp/betty /tmp/my_first_directory  to move betty to my_first_directory
 8 rm /tmp/my_first_directory/betty  to delete betty
 9 rmdir /tmp/my_first_directory  to delete directory
-10 cd ..   to go back to previous directory
+10 cd -   to go back to previous directory
