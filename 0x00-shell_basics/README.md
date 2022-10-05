@@ -6,3 +6,4 @@
 5 ls -lna Display current directory contents, Long format, with user and group IDs displayed numerically, And hidden files (starting with .)
 6 mkdir /tmp/my_first_directory     to create the directory in /tmp
 7 /tmp/betty /tmp/my_first_directory  to move betty to my_first_directory
+8 rm /tmp/my_first_directory/betty  to delete betty
