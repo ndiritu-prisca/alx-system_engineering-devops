@@ -9,3 +9,4 @@
 8 rm /tmp/my_first_directory/betty  to delete betty
 9 rmdir /tmp/my_first_directory  to delete directory
 10 cd -   to go back to previous directory
+11 ls -la . .. /boot
