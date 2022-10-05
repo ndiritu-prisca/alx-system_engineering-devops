@@ -11,4 +11,5 @@
 10 cd -   to go back to previous directory
 11 ls -la . .. /boot
 12 file /tmp/iamafile
-13 ln -sf /bin/ls _ls_
+13 ln -sf /bin/ls __ls__
+14 cp -u *.html ..
