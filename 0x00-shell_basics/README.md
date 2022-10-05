@@ -1,6 +1,8 @@
-pwd     Prints the absolute path name of the current working directory
-ls      Displays contents list of your current directory
-cd      Change working directory to user's home directory
-ls -l   Display current directory contents in a long format
-ls -la  Display current directory contents, including hidden files
-ls -lna Display current directory contents, Long format, with user and group IDs displayed numerically, And hidden files (starting with .)
+0 pwd     Prints the absolute path name of the current working directory
+1 ls      Displays contents list of your current directory
+2 cd      Change working directory to user's home directory
+3 ls -l   Display current directory contents in a long format
+4 ls -la  Display current directory contents, including hidden files
+5 ls -lna Display current directory contents, Long format, with user and group IDs displayed numerically, And hidden files (starting with .)
+6 mkdir /tmp/my_first_directory     to create the directory in /tmp
+7 /tmp/betty /tmp/my_first_directory  to move betty to my_first_directory
