@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((bin2dec('1010'))
+echo $(($BINARY#1010))
