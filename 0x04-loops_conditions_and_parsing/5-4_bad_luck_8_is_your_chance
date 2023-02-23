@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script loops 10 times, the 4th loop displays "bad luck", 8th loop
+#+ displays "good luck" and the rest display "Best School" .
+# The implementation is thorugh a while loop, if, elif, and else statements.
+
+i=0
+
+while [ $i -lt 10 ]
+do
+    if [ "$i" -eq 3 ]
+    then
+      echo "bad luck"
+    elif [ "$i" -eq 7 ]
+    then
+      echo "good luck"
+    else
+      echo "Best School"
+    fi
+    i=$((i+1))
+done
