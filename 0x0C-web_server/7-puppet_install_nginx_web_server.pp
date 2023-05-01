@@ -1,30 +1,39 @@
 #Install Nginx web server (w/ Puppet)
 
-package {'nginx':
-  ensure => 'present'
+exec { 'apt-update':
+  command => 'apt-get update',
 }
 
-exec {'install':
-  provider => shell,
-  command  => 'sudo apt-get update; sudo apt-get -y install nginx,
+package { 'nginx':
+  ensure => installed,
 }
 
-exec {'run':
-  provider => shell,
-  command  => sudo service nginx start; sudo ufw allow 'Nginx HTTP',
+service { 'nginx':
+  ensure => running,
+  enable => true,
 }
 
-exec {'Hello world!':
-  provider => shell,
-  command  => echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html,
+exec { 'nginx-ufw':
+  command => 'ufw allow \'Nginx HTTP\'',
 }
 
-exec {'redirect':
-  provider => shell,
-  command  => sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default,
+file { '/var/www/html/index.nginx-debian.html':
+  content => 'Hello World!',
 }
 
-exec {'error':
-  provider => shell,
-  command  => sed -i "/redirect_me/ a\\\terror_page 404 /my_404.html;" /etc/nginx/sites-available/default; echo "Ceci n'est pas une page" | sudo tee /var/www/html/my_404.html,
+file_line { 'nginx-redirect':
+  path  => '/etc/nginx/sites-available/default',
+  line  => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  match => '^listen 80 default_server',
 }
+
+file_line { 'nginx-error-page':
+  path  => '/etc/nginx/sites-available/default',
+  line  => 'error_page 404 /my_404.html;',
+  match => 'redirect_me',
+}
+
+file { '/var/www/html/my_404.html':
+  content => 'Ceci n\'est pas une page',
+}
+
