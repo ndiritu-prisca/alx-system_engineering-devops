@@ -28,7 +28,7 @@ def todo_progress(employee_id):
     tasks_done = len(todos_done_dict)
 
     # Display progress
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(employee_name, tasks_done, total_tasks))
     for todo in todos_done_dict:
         task_title = todo.get("title")
@@ -36,4 +36,4 @@ def todo_progress(employee_id):
 
 
 if __name__ == "__main__":
-    todo_progress(argv[1])
+    todo_progress(int(argv[1]))
