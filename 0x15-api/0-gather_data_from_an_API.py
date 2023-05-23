@@ -32,7 +32,7 @@ def todo_progress(employee_id):
           .format(employee_name, tasks_done, total_tasks))
     for todo in todos_done_dict:
         task_title = todo.get("title")
-        print("\t" + task_title)
+        print("\t " + task_title)
 
 
 if __name__ == "__main__":
