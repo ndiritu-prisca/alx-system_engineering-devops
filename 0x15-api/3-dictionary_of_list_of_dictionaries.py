@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
     Using what you did in the task #0, extend your Python script to export
-    data in the JSON format.
+    data in the JSON format differently.
 """
 
 import json
@@ -10,7 +10,7 @@ from sys import argv
 
 
 def json_export():
-    """Function to export data in JSON format"""
+    """Function to export data in JSON format differently"""
     # Fetch employee details
     url = "https://jsonplaceholder.typicode.com/"
     employee_url = "{}users".format(url)
