@@ -24,7 +24,7 @@ def todo_progress(employee_id):
     # Calculate progress
     total_tasks = len(todos_data)
     todos_done_dict = requests.get("{}todos?userId={}&completed=true"
-                              .format(url, employee_id)).json()
+                                   .format(url, employee_id)).json()
     tasks_done = len(todos_done_dict)
 
     # Display progress
@@ -32,7 +32,7 @@ def todo_progress(employee_id):
           .format(employee_name, tasks_done, total_tasks))
     for todo in todos_done_dict:
         task_title = todo.get("title")
-        print("\t " + task_title)
+        print("\t {}".format(task_title))
 
 
 if __name__ == "__main__":
