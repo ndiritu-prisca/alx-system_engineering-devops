@@ -26,7 +26,7 @@ def export_csv(employee_id):
     file_name = "{}.csv".format(employee_id)
 
     with open(file_name, mode='w', newline="") as csv_file:
-        writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
         for todo in todos_data:
             writer.writerow([employee_id, user_name,
                             todo.get("completed"), todo.get("title")])
