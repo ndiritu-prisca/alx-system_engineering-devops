@@ -45,4 +45,4 @@ def json_export(employee_id):
 
 
 if __name__ == "__main__":
-    json_export(argv[1])
+    json_export(int(argv[1]))
