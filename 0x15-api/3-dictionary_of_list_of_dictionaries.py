@@ -4,9 +4,9 @@
     data in the JSON format.
 """
 
+import json
 import requests
 from sys import argv
-import json
 
 
 def json_export(employee_id):
