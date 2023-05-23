@@ -4,9 +4,9 @@
     data in the CSV format.
 """
 
+import csv
 import requests
 from sys import argv
-import csv
 
 
 def export_csv(employee_id):
@@ -29,7 +29,7 @@ def export_csv(employee_id):
         writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         for todo in todos_data:
             writer.writerow([employee_id, user_name,
-                            todo.get("completed"), info.get("title")])
+                            todo.get("completed"), todo.get("title")])
 
 
 if __name__ == "__main__":
