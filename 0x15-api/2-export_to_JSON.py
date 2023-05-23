@@ -4,9 +4,9 @@
     data in the JSON format.
 """
 
+import json
 import requests
 from sys import argv
-import json
 
 
 def export_json(employee_id):
@@ -25,9 +25,9 @@ def export_json(employee_id):
     # Export in JSON formart
     with open("{}.json".format(employee_id), mode="w") as jsonfile:
         json.dump({employee_id: [{
-                  "task": t.get("title"),
-                  "completed": t.get("completed"),
-                  "username": username
+                  "task": todo.get("title"),
+                  "completed": todo.get("completed"),
+                  "username": user_name
                   } for todo in todos_data]}, jsonfile)
 
 
