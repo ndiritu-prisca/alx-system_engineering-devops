@@ -1,0 +1,25 @@
+# Virtual Host configuration
+server {
+        listen 80;
+        listen [::]:80;
+        add_header X-Served-By "171661-web-01";
+#        server_name ndirituprisca.tech;
+        server_name 34.207.64.72;
+#
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_pass http://unix:/home/ubuntu/AirBnB_clone_v2/Airbnb_clone_v2.sock;
+#               proxy_pass http://localhost:5000/airbnb-onepage/;
+        }
+
+        root /var/www/html;
+#       root /var/www/example.com;
+#       index index.html;
+        index index.html index.htm index.nginx-debian.html;
+        error_page 404 /my_404.html;
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
