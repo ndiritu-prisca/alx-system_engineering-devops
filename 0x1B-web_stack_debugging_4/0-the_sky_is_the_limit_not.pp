@@ -1,10 +1,6 @@
 #Fix stack to get 0 failed requests
-exec { 'replace':
-  path    => '/bin/',
-  command => 'sed -i "s/15/4096" /etc/default/nginx',
-}
-
-exec { 'restart':
-  path    => '/usr/bin/',
-  command => 'service nginx restart',
+exec { 'nginx-fix':
+  command => "bash -c \"sed -iE 's/^ULIMIT=.*/ULIMIT=\\\"-n 8192\\\"/' \
+/etc/default/nginx; service nginx restart\"",
+  path    => '/usr/bin:/usr/sbin:/bin',
 }
